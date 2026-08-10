@@ -1,20 +1,32 @@
 fun testaCondicao(){
 
-    val contaAndre = Conta(
+    val contaAndre = ContaFree(
         login = "andre@gmail.com",
         senha = "Andre#3004",
         username = "AndreOAndre",
-        seguidores = 0,
-        seguindo = 0
-    )
+        seguindo = 0,
+        seguidores = 0
 
-    val contaAna = Conta(
-        login = "anaelson@gmail.com",
-        senha = "aninhadasilva123",
-        username = "AnaEuSou",
-        seguidores = 0,
-        seguindo = 0
     )
+    println(contaAndre.username)
+    println(contaAndre.seguidores)
+    println(contaAndre.seguindo)
+
+    println()
+
+    val contaAna = ContaPlus(
+        login = "anaeusou@gmail.com",
+        senha ="12345",
+        username = "anaeuso",
+        seguindo = 0,
+        seguidores = 0
+    )
+    println(contaAna.username)
+    println(contaAna.seguidores)
+    println(contaAna.seguindo)
+
+
+
 
     println("TESTANDO LOGIN")
     contaAndre.verificaLogin("andre@gmail.com", "Andre#3004")
@@ -36,7 +48,7 @@ fun testaCondicao(){
     println()
 //------------------------------------------------//
     println("TESTANDO SEGUIDORES")
-    contaAndre.seguir(contaAndre, contaAna)
+    contaAndre.seguir(pedido = contaAndre, destino = contaAna)
     println("seguidores ana: ${contaAna.seguidores}")
     println("seguidores andre: ${contaAndre.seguidores}")
     println("andre segue: ${contaAndre.seguindo}")
